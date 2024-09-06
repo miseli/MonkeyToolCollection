@@ -1,0 +1,42 @@
+/*
+* @Author: Cube
+* @Date:   2020-05-09 03:05:34
+* @Last Modified by:   Cube
+* @Last Modified time: 2020-09-26 12:11:07
+*/
+.github_btn {
+  position: fixed;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  bottom: 50px;
+  right: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50%;
+  background: rgba(63, 63, 63, 0.23);
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  z-index: 99999;
+  transform: rotate(180deg)
+}
+
+.btn_warp {
+  position: fixed;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  bottom: 50px;
+  right: 10px;
+  border-radius: 10%;
+  background: rgba(63,63,63,0.23);
+  height: 110px;
+  overflow: hidden;
+  z-index: 99999;
+  /* transform: rotate(180deg); */
+  cursor: pointer;
+}

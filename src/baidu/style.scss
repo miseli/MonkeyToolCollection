@@ -1,0 +1,69 @@
+/*
+* @Author: Cube
+* @Date:   2020-05-07 23:19:50
+* @Last Modified by:   Cube
+* @Last Modified time: 2021-01-08 17:11:44
+*/
+
+// .hello {
+//   color: red !important;
+//   background: url('./common/img/success.png') no-repeat;
+//   width: 20em;
+//   height: 20em;
+//   overflow: hidden;
+// }
+
+div.warp {
+  position: absolute;
+  color: #333;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 2px;
+  border: solid 1px #eee;
+  box-shadow: rgba(40, 40, 40, 0.15) 0px 0px 2px 0px;
+  transition: all 0.15s ease-out 0s;
+  z-index: -9999;
+  opacity: 0;
+  margin-top: 0em;
+  max-height: 0em;
+}
+
+div.show .warp {
+  margin-top: 1em;
+  max-height: 15em;
+  opacity: 1;
+  z-index: 9999;
+  width: 10rem;
+}
+
+div.app .warp ul {
+  margin: 0 0 0 10px;
+  padding: 0;
+  max-height: 10em;
+  list-style: none;
+  overflow: auto;
+  outline: 0;
+  line-height: 5px;
+  cursor: pointer;
+}
+
+div.app .warp ul li {
+  margin-top: 3px;
+  list-style: disc;
+  display: block;
+  padding: .4em .5em;
+  cursor: pointer;
+}
+
+div.app .warp li:hover {
+  background: #f1f1f1;
+}
+
+.q-img-fullscreen-wraper .q-img-item {
+  margin-left: 0px !important;
+  margin-top: 0px !important;
+  max-width: 100% !important;
+  max-height: fit-content !important;
+  left: auto !important;
+  top: auto !important;
+}
