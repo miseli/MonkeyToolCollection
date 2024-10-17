@@ -5,6 +5,6 @@
 
 
 
-
+set NODE_OPTIONS=--openssl-legacy-provider
 @cmd /k "@npm run build & exit"
 @pause&exit

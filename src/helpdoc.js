@@ -2,17 +2,43 @@
  * @Author: Cube
  * @Date:   2021-04-06 00:21:06
  * @Last Modified by:   Cube
- * @Last Modified time: 2023-10-14 22:22:55
+ * @Last Modified time: 2024-10-17 14:37:13
  */
-export default function (Cookies, axios, Events, $, jsonp, BreakOn, downloadResource) {
-  downloadResource.help = function () {
-    console.log(`
-forceDownload(blob, filename)
-download_blob(blob, fileName)
-function downloadResource(url, filename, opt)
-opt参考https://www.ruanyifeng.com/blog/2020/12/fetch-tutorial.html
+import {codeFrameColumns} from '@babel/code-frame'
+function log(){
+  const res = codeFrameColumns(code,{},{
+    highlightCode: true,
+    message: '这里错了'
+  })
+  console.log(res)
+}
+
+export default function (o) {
+  let {Cookies, axios, Events, $, jsonp, JSZip} = o
+
+JSZip.help = function(){
+  console.log(`
+const zip = new JSZip();
+
+zip.file("Hello.txt", "Hello World\n");
+
+const img = zip.folder("images");
+img.file("smile.gif", imgData, {base64: true});
+
+zip.generateAsync({type:"blob"}).then(function(content) {
+    // see FileSaver.js
+    saveAs(content, "example.zip");
+});
+
+/*
+Results in a zip containing
+Hello.txt
+images/
+    smile.gif
+*/
 `)
   }
+
   Cookies.help = function () {
     console.log(`
 Usage:
@@ -198,28 +224,7 @@ jq 3.x 同2.x, 也可以直接通过元素.jqueryxxxxxxxx得到
 jq 获取事件函数的方法 来自:https://blog.csdn.net/zlllxl2002/article/details/46804117
 `)
   }
-  jsonp.help = () => {
-    console.log(`
-jsonp(url, opts, fn)
-url(String) 目标url
-opts(Object) 可选的
-  param(String)   用来指定回调的查询字符串参数的名称(默认为callback)
-  timeout(Number) 超时错误发出后多长时间。0禁用(默认为60000)
-  prefix (String) 处理jsonp响应的全局回调函数的前缀(默认为__jp)
-  name (String)   处理jsonp响应的全局回调函数的名称(默认为前缀+递增计数器)
-fn 回调函数
-注意,由于此jsonp被二次封装,所以fn失效,具体参考window与unsafeWindow
-所以此封装返回一个函数,通过$jsonp(window)来返回真正的jsonp函数
-改自: https://github.com/LearnBoost/jsonp.git
-`)
-  }
 
-  BreakOn.help = () => {
-    console.log(`
-  // mode默认是write, 如果需要read需要指定mode='read'
-  // func返回true表示阻塞write/read继续进行,默认false
-  let bp1 = $breakon(obj, propertyName, mode, func)
-  bp1.disable()
-`)
-  }
+
+
 }

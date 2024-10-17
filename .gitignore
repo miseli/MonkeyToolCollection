@@ -1,4 +1,6 @@
 /common/img
+*.lock
+*lock.json
 
 # Logs
 logs

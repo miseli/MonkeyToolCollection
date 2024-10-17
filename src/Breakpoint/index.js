@@ -1,6 +1,6 @@
 /*
  * @Author: Cube
- * @Last Modified time: 2021-01-08 20:33:20
+ * @Last Modified time: 2024-10-17 15:22:56
  * https://github.com/paulirish/break-on-access/blob/master/break-on-access.js
  */
 
@@ -96,4 +96,12 @@ function breakOn(obj, propertyName, mode, func) {
     }
   };
 };
+
+breakOn.help = `
+// mode默认是write, 如果需要read需要指定mode='read'
+// func返回true表示阻塞write/read继续进行,默认false
+let bp1 = $breakon(obj, propertyName, mode, func)
+bp1.disable()
+`
+
 export default breakOn

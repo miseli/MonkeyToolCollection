@@ -1,6 +1,6 @@
 /*
  * @Author: Cube
- * @Last Modified time: 2021-05-09 23:24:01
+ * @Last Modified time: 2024-10-18 11:26:16
  */
 // import sss from './style.scss'
 import icon from './icon.html'
@@ -56,6 +56,10 @@ function ToTop() {
 
   return divWrap
 }
+
+ToTop.help = `
+  $totop().data('speed',200).appendTo("body")
+`
 
 export default ToTop
 
