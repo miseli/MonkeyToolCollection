@@ -2,7 +2,7 @@
  * @Author: Cube
  * @Date:   2021-05-09 22:48:46
  * @Last Modified by:   Cube
- * @Last Modified time: 2021-05-09 23:14:06
+ * @Last Modified time: 2024-10-17 14:28:45
  */
 
 /**
@@ -15,7 +15,7 @@ const debug = require('debug')('jsonp');
  * Module exports.
  */
 
-module.exports = function(global) {
+const j = function(global) {
   /**
    * Callback index.
    */
@@ -103,3 +103,19 @@ module.exports = function(global) {
   }
   return jsonp;
 };
+
+j.help = `
+jsonp(url, opts, fn)
+url(String) 目标url
+opts(Object) 可选的
+  param(String)   用来指定回调的查询字符串参数的名称(默认为callback)
+  timeout(Number) 超时错误发出后多长时间。0禁用(默认为60000)
+  prefix (String) 处理jsonp响应的全局回调函数的前缀(默认为__jp)
+  name (String)   处理jsonp响应的全局回调函数的名称(默认为前缀+递增计数器)
+fn 回调函数
+注意,由于此jsonp被二次封装,所以fn失效,具体参考window与unsafeWindow
+所以此封装返回一个函数,通过$jsonp(window)来返回真正的jsonp函数
+改自: https://github.com/LearnBoost/jsonp.git
+`
+
+module.exports = {jsonp: j}

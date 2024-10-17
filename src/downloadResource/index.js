@@ -2,7 +2,7 @@
 * @Author: Cube
 * @Date:   2021-05-09 23:17:18
 * @Last Modified by:   Cube
-* @Last Modified time: 2021-10-19 13:19:10
+* @Last Modified time: 2024-10-17 13:55:28
 */
 
 
@@ -52,5 +52,12 @@ function downloadResource(url, filename, opt = {}) {
     }
   }).catch(e => console.error(e));
 }
+
+downloadResource.help = `
+forceDownload(blob, filename)
+download_blob(blob, fileName)
+function downloadResource(url, filename, opt)
+opt参考https://www.ruanyifeng.com/blog/2020/12/fetch-tutorial.html
+`
 
 module.exports = {downloadResource,forceDownload,download_blob}
